@@ -26,13 +26,34 @@
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#menus">Menu</a>
+            <a href="#products">Product</a>
             <a href="#contact">Contact</a>
         </div>
 
         <div class="navbar-ex">
             <a href="#" id="search"><i data-feather="search"></i></a>
-            <a href="#" id="library"><i data-feather="book-open"></i></a>
+            <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
             <a href="#" id="menu"><i data-feather="menu"></i></a>
+        </div>
+
+        <!-- Search Form Start -->
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="Search Here!">
+            <label for="search"><i data-feather="search"></i></label>
+        </div>
+        <!-- Search Form End -->
+
+        <!-- shopping cart -->
+
+        <div class="shopping-cart">
+            <div class="cart-item">
+                <img src="img/Product/1.jpg" alt="Product">
+                <div class="item-detail">
+                    <h3>Product</h3>
+                    <div class="item-price">IDR 30.000</div>
+                </div>
+                <i data-feather="trash-2" class="remove-item"></i>
+            </div>
         </div>
     </nav>
 
@@ -40,7 +61,6 @@
         <main class="content">
             <h1><span>Coffee</span> "Caffein drink"</h1>
             <p>Coffee, a caffeine drink with a bitter taste.</p>
-            <a href="#contact" class="cta">Buy Coffee now!</a>
         </main>
     </section>
 
@@ -123,6 +143,73 @@
 
     </section>
 
+    <section class="products" id="products">
+        <h2><span>Best-Seller</span> Products</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quos iste laboriosam odio ex ipsam.</p>
+        <div class="row">
+            <div class="product-card">
+                <div class="product-icons">
+                    <a href="#"><i data-feather="shopping-cart"></i></a>
+                    <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+                </div>
+                <div class="product-image">
+                    <img src="img/Product/1.jpg" alt="Product">
+                </div>
+                <div class="product-content">
+                    <h3>Coffee Beans</h3>
+                    <div class="product-stars">
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star"></i>
+                    </div>
+                    <div class="product-price">IDR 30.000 <span>IDR 60.000</span></div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-icons">
+                    <a href="#"><i data-feather="shopping-cart"></i></a>
+                    <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+                </div>
+                <div class="product-image">
+                    <img src="img/Product/1.jpg" alt="Product">
+                </div>
+                <div class="product-content">
+                    <h3>Coffee Beans</h3>
+                    <div class="product-stars">
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star"></i>
+                    </div>
+                    <div class="product-price">IDR 30.000 <span>IDR 60.000</span></div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-icons">
+                    <a href="#"><i data-feather="shopping-cart"></i></a>
+                    <a href="#" class="item-detail-button"><i data-feather="eye"></i></a>
+                </div>
+                <div class="product-image">
+                    <img src="img/Product/1.jpg" alt="Product">
+                </div>
+                <div class="product-content">
+                    <h3>Coffee Beans</h3>
+                    <div class="product-stars">
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star"></i>
+                    </div>
+                    <div class="product-price">IDR 30.000 <span>IDR 60.000</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="contact" class="contact">
         <h2><span>Contact</span> Shop</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime, delectus.</p>
@@ -164,6 +251,33 @@
             <p>Created By <a href="">Jason</a>. | &copy; 2024.</p>
         </div>
     </footer>
+
+    <!-- Detail Start -->
+
+    <div class="modal" id="item-detail-modal">
+        <div class="modal-container">
+            <a href="#" class="close"><i data-feather="x"></i></a>
+            <div class="modal-content">
+                <img src="img/Product/1.jpg" alt="Product">
+                <div class="product-content">
+                    <h3>Coffee Beans</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto accusamus corrupti a quidem quis tempora, similique laborum fugiat quos dolorem, eius voluptates ut. Molestiae, dicta?</p>
+                    <div class="product-stars">
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <i data-feather="star" class="star"></i>
+                        <div class="product-price">IDR 30.000 <span>IDR 60.000</span></div>
+                        <a href="#"><i data-feather="shopping-cart"></i><span>add to cart</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail End -->
+
     <script>
         feather.replace();
       </script>
