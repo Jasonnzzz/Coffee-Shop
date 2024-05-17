@@ -93,9 +93,10 @@ body{
     background-size: cover;
     background-position: center;
     position: relative;
+    mask-image: linear-gradient(rgba(0, 0, 0, 1)75%, rgba(0, 0, 0, 0));
 }
 
-.hero::after{
+/* .hero::after{
     content: '';
     display: block;
     position: absolute;
@@ -103,11 +104,15 @@ body{
     height: 30%;
     background: linear-gradient(0deg , rgba(1,1,3,1)8%, rgba(255,255,255,0)50%);
     bottom: 0;                                                                      
-}
+} */
 
 .hero .content{
     padding: 1rem 7%;
-    max-width: 60rem;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    mix-blend-mode: difference;
 }
 
 .hero .content h1{
@@ -115,10 +120,12 @@ body{
     color: white;
     text-shadow: 1px 1px 3px rgba(1,1,3,0,5);
     line-height: 1.2;
+    mix-blend-mode: none;
 }
 
 .hero .content h1 span{
     color: rgb(173, 69, 0);
+    mix-blend-mode: difference;
 }
 
 .hero .content p{
@@ -141,11 +148,11 @@ body{
     box-shadow: 1px 1px 3px rgba(1,1,3,0.5);
 }
 
-.about ,.menus, .contact {
+.about ,.menus, .contact, .products {
     padding: 8rem 7% 1.4rem;
 }
 
-.about h2, .menus h2, .contact h2{
+.about h2, .menus h2, .contact h2, .products h2 {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 3rem;
@@ -156,11 +163,11 @@ body{
     color:rgb(173, 69, 0);
 }
 
-.menus h2 {
+.menus h2, .products h2 {
     color:white;
 }
 
-.menus h2 span {
+.menus h2 span, .products h2 span {
     color: rgb(173, 69, 0);
 }
 
@@ -174,6 +181,13 @@ body{
 
 .about .row .about-img{
     width: 100%;
+}
+
+.about .row .about-img img {
+    mask-image: url(../img/svg/svg.png);
+    mask-size: 60%;
+    mask-repeat: no-repeat;
+    mask-position: center;
 }
 
 .about.row .content {
@@ -196,11 +210,11 @@ body{
     margin-left: 1rem;
 }
 
-.menus h2, .contact h2 {
+.menus h2, .contact h2, .products h2 {
     margin-bottom: 1rem;
 }
 
-.menus p, .contact p {
+.menus p, .contact p, .products p {
     text-align: center;
     max-width: 30rem;
     margin: auto;
@@ -234,8 +248,155 @@ body{
     margin: 1.25rem auto 0.5rem;
 }
 
+.navbar .search-form {
+    position: absolute;
+    top: 125%;
+    right: 7%;
+    left: 7%;
+    background-color: white;
+    width: 86vw;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.3s;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+.navbar .search-form.active {
+    transform: scaleY(1);
+}
+
+.navbar .search-form input {
+    height: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+    color: black;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.navbar .search-form label {
+    cursor: pointer;
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    color: black;
+
+}
+
 .Noncoffee {
     margin-top: 50px;
+}
+
+.shopping-cart {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 35rem;
+    height: 100vh;
+    padding: 0 1.5rem;
+    color: black;
+    background-color: white;
+    transition: 0.3s linear;
+}
+
+.shopping-cart img {
+    height: 6rem;
+    border-radius: 5px;
+}
+
+.shopping-cart .cart-item {
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #666;
+    position: relative;
+}
+
+.shopping-cart .item-price {
+    font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+    color: rgb(223, 0, 0);
+}
+
+.shopping-cart.active {
+    right: 0;
+}
+
+.products .row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.products .product-card {
+    text-align: center;
+    border: 1px solid #666;
+    padding: 2rem;
+}
+
+.products .product-image img {
+    padding: 1rem 0;
+    height: 25rem;
+}
+
+.products .product-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.products .product-icons a {
+    width: 4rem;
+    height: 4rem;
+    color: #fff;
+    margin: 0.3rem;
+    border: 1px solid #666;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products .product-icons a:hover {
+    background-color:rgb(173, 69, 0);
+    border: 1px solid rgb(173, 69, 0);
+}
+
+.products .product-content h3 {
+    font-size: 2rem;
+}
+
+.products .product-stars {
+    font-size: 1.7rem;
+    padding: 0.8rem;
+    color:rgb(173, 69, 0);
+}
+
+.products .product-stars .star {
+    fill: rgb(173, 69, 0);
+}
+
+.products .product-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.products .product-price span {
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1rem;
 }
 
 .contact .row {
@@ -329,6 +490,78 @@ footer .credit a {
     font-weight: 700;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+@keyframes slideToBottom {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.modal-container {
+    position: relative;
+    background-color: #fefefe;
+    color: black;
+    margin: 15% auto;
+    padding: 1.2rem;
+    border: 1px solid #666;
+    width: 80%;
+    animation: slideToBottom 0.5s;
+}
+
+.modal-container .close{
+    position: absolute;
+    right: 1rem;
+}
+
+.modal-content {
+    display: flex;
+    flex-wrap: nowrap;
+
+}
+
+.modal-content img{
+    height: 20rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+.modal-content p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-top: 1.2rem;
+}
+
+.modal-content a {
+    display: flex;
+    gap: 1rem;
+    width: 12rem;
+    background-color:rgb(173, 69, 0);
+    color: white;
+    margin-top: 1rem;
+    padding: 1rem 1.6rem;
+}
+
+.close:hover {
+    color: red;
+
+} 
+
 @media (max-width: 1360px) {
     html {
         font-size: 75%;
@@ -348,7 +581,7 @@ footer .credit a {
         position: absolute;
         top: 100%;
         right: -100%;
-        backdrop-filter: blur(3px);
+        backdrop-filter: blur(20px);
         width: 30rem;
         height: 100vh;
         transition: 0.3s;
@@ -418,7 +651,9 @@ footer .credit a {
     .contact .row form {
         padding-top: 0;
     }
-
+     .modal-content {
+        flex-wrap: wrap;
+     }
 }
 
 @media (max-width: 450px) {
